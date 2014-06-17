@@ -6,9 +6,15 @@ var MyCanvas = function(parent) {
 	this.create(parent);
 };
 
+MyCanvas.prototype.canvas = null;
+MyCanvas.prototype.ctx = null;
+
 MyCanvas.prototype.create = function(parent) {
 	var canvas  = document.createElement('canvas');
 	var that = this;
+	this.canvas = canvas;
+	this.ctx = canvas.getContext('2d');
+
 	window.onresize = function(){that.resize(canvas)};
 	this.resize(canvas, parent);
 	if (!parent) {
@@ -26,4 +32,13 @@ MyCanvas.prototype.resize = function(canvas, parent) {
 
 MyCanvas.prototype.start = function() {
 //	ticker.
+};
+
+MyCanvas.prototype.addShape = function(shape) {
+	this.layers.addShape(shape);
+	return this;
+};
+
+MyCanvas.prototype.draw = function() {
+	this.layers.draw(this.ctx);
 };

@@ -6,6 +6,8 @@ var MyCanvasRect = function(x, y, width, height) {
 	this.create(x, y, width, height);
 };
 
+MyCanvasRect.prototype = new MyCanvasShape();
+
 MyCanvasRect.prototype.x = 0;
 MyCanvasRect.prototype.y = 0;
 MyCanvasRect.prototype.width = 0;
@@ -20,8 +22,14 @@ MyCanvasRect.prototype.create = function(x, y, width, height) {
 };
 
 MyCanvasShape.prototype.draw = function(ctx) {
-	ctx.beginPath();
-	ctx.rect(this.x, this.y, this.width, this.height);
-	ctx.closePath();
+	if (this.mustBeFilled || !this.mustBeStroked) {
+		ctx.fillStyle = this.fillColor;
+		ctx.fillRect(this.x, this.y, this.width, this.height);
+	}
+	if (this.mustBeStroked) {
+		ctx.lineWidth = this.lineWidth;
+		ctx.strokeStyle = this.strokeColor;
+		ctx.strokeRect(this.x, this.y, this.width, this.height);
+	}
 	return this;
 };
