@@ -15,6 +15,7 @@ MyCanvas.prototype.create = function(parent) {
 		parent = document.getElementsByTagName('body')[0];
 	}
 	parent.appendChild(canvas);
+	this.layers = new MyCanvasLayers();
 	return this;
 };
 
@@ -23,6 +24,6 @@ MyCanvas.prototype.resize = function(canvas, parent) {
 	canvas.height = window.innerHeight/* - 4*/;
 };
 
-MyCanvas.prototype.start = function(ticker) {
+MyCanvas.prototype.start = function() {
 //	ticker.
 };
