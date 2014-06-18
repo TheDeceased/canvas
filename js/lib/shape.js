@@ -13,7 +13,7 @@ MyCanvasShape.prototype.mustBeStroked = false;
 MyCanvasShape.prototype.strokeColor = '#000';
 MyCanvasShape.prototype.lineWidth = 1;
 
-MyCanvasShape.prototype.create = function() {
+MyCanvasShape.prototype.create = function () {
 	return this;
 };
 

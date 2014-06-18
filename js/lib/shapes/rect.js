@@ -21,7 +21,7 @@ MyCanvasRect.prototype.create = function(x, y, width, height) {
 	return this;
 };
 
-MyCanvasShape.prototype.draw = function(ctx) {
+MyCanvasRect.prototype.draw = function(ctx) {
 	if (this.mustBeFilled || !this.mustBeStroked) {
 		ctx.fillStyle = this.fillColor;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
