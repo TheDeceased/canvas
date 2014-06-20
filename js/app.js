@@ -18,4 +18,9 @@ sector.fill('#c7c7c7')
 	.stroke('#963535');
 canvas.addShape(sector);
 
+var square = new MyCanvasSquare (0, 0, 50);
+square.fill('#cecece')
+	.setLineWidth(1)
+	.stroke('#900');
+canvas.addShape(square);
 canvas.draw();

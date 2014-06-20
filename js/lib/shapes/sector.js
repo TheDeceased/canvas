@@ -1,9 +1,10 @@
 /**
- * Created by safronov on 18.06.14.
+ * Created by The Deceased on 18.06.14.
  */
 
 var MyCanvasSector = function(x, y, radius, startAngle, endAngle) {
-	this.create(x, y, radius, startAngle, endAngle);
+	this.make(x, y, radius, startAngle, endAngle);
+	this.moveToCenter = true;
 };
 
 MyCanvasSector.prototype = new MyCanvasShape();
@@ -14,7 +15,7 @@ MyCanvasSector.prototype.radius = 0;
 MyCanvasSector.prototype.startAngle = 0;
 MyCanvasSector.prototype.endAngle = 0;
 
-MyCanvasSector.prototype.create = function(x, y, radius, startAngle, endAngle) {
+MyCanvasSector.prototype.make = function(x, y, radius, startAngle, endAngle) {
 	this.x = x;
 	this.y = y;
 	this.radius = radius;
@@ -25,7 +26,9 @@ MyCanvasSector.prototype.create = function(x, y, radius, startAngle, endAngle) {
 
 MyCanvasSector.prototype.draw = function(ctx) {
 	ctx.beginPath();
-	ctx.moveTo(this.x, this.y);
+	if (this.moveToCenter) {
+		ctx.moveTo(this.x, this.y);
+	}
 	ctx.arc(this.x, this.y, this.radius, this.convertToRadians(this.startAngle), this.convertToRadians(this.endAngle), false);
 	ctx.closePath();
 	if (this.mustBeFilled || !this.mustBeStroked) {

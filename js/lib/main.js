@@ -3,13 +3,13 @@
  */
 
 var MyCanvas = function(parent) {
-	this.create(parent);
+	this.make(parent);
 };
 
 MyCanvas.prototype.canvas = null;
 MyCanvas.prototype.ctx = null;
 
-MyCanvas.prototype.create = function(parent) {
+MyCanvas.prototype.make = function(parent) {
 	var canvas  = document.createElement('canvas');
 	var that = this;
 	this.canvas = canvas;

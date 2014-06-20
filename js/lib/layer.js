@@ -1,12 +1,12 @@
 /**
- * Created by safronov on 17.06.14.
+ * Created by The Deceased on 17.06.14.
  */
 
 var MyCanvasLayer = function(parent) {
-	this.create(parent);
+	this.make(parent);
 };
 
-MyCanvasLayer.prototype.create = function(parent) {
+MyCanvasLayer.prototype.make = function(parent) {
 	this.parent = parent;
 	this.shapes = [];
 	return this;
@@ -24,12 +24,12 @@ MyCanvasLayer.prototype.draw = function(ctx) {
 
 
 var MyCanvasLayers = function() {
-	this.create();
+	this.make();
 };
 
 MyCanvasLayers.prototype.layers = null;
 
-MyCanvasLayers.prototype.create = function() {
+MyCanvasLayers.prototype.make = function() {
 	this.layers = [];
 	this.newLayer();
 };

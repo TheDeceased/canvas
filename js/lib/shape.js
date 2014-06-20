@@ -1,9 +1,9 @@
 /**
- * Created by safronov on 17.06.14.
+ * Created by The Deceased on 17.06.14.
  */
 
 var MyCanvasShape = function() {
-	this.create();
+	this.make();
 };
 
 MyCanvasShape.prototype.mustBeFilled = false;
@@ -13,7 +13,7 @@ MyCanvasShape.prototype.mustBeStroked = false;
 MyCanvasShape.prototype.strokeColor = '#000';
 MyCanvasShape.prototype.lineWidth = 1;
 
-MyCanvasShape.prototype.create = function () {
+MyCanvasShape.prototype.make = function () {
 	return this;
 };
 

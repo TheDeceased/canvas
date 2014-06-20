@@ -1,9 +1,9 @@
 /**
- * Created by safronov on 17.06.14.
+ * Created by The Deceased on 17.06.14.
  */
 
 var MyCanvasRect = function(x, y, width, height) {
-	this.create(x, y, width, height);
+	this.make(x, y, width, height);
 };
 
 MyCanvasRect.prototype = new MyCanvasShape();
@@ -13,7 +13,7 @@ MyCanvasRect.prototype.y = 0;
 MyCanvasRect.prototype.width = 0;
 MyCanvasRect.prototype.height = 0;
 
-MyCanvasRect.prototype.create = function(x, y, width, height) {
+MyCanvasRect.prototype.make = function(x, y, width, height) {
 	this.x = x;
 	this.y = y;
 	this.width = width;
