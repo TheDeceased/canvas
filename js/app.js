@@ -23,4 +23,11 @@ square.fill('#cecece')
 	.setLineWidth(1)
 	.stroke('#900');
 canvas.addShape(square);
+
+var polygon = new MyCanvasPolygonEq(350, 400, 75, 6, 0);
+polygon.fill('#cecece')
+	.setLineWidth(1)
+	.stroke('#900');
+canvas.addShape(polygon);
+
 canvas.draw();

@@ -52,3 +52,15 @@ MyCanvasShape.prototype.stroke = function(color) {
 MyCanvasShape.prototype.draw = function(ctx) {
 	return this;
 };
+
+MyCanvasShape.prototype.moveTo = function(x, y) {
+	this.x = x;
+	this.y = y;
+	return this;
+};
+
+MyCanvasShape.prototype.move = function (x, y) {
+	this.x += x;
+	this.y += y;
+	return this;
+};
