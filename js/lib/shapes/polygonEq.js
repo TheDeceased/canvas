@@ -20,12 +20,14 @@ MyCanvasPolygonEq.prototype.make = function(x, y, radius, sides, startAngle) {
 	this.radius = radius;
 	this.sides = sides;
 	this.startAngle = startAngle;
+	if (this.sides < 3) {
+		throw 'Polygon can\'t have less than 2 sides';
+	}
 	return this;
 };
 
 MyCanvasPolygonEq.prototype.draw = function(ctx) {
 	// TODO: move to construct and throw exception on lower values
-	if (this.sides < 3) return this;
 
 	var arcLength = (Math.PI * 2)/this.sides;
 

@@ -64,3 +64,10 @@ MyCanvasShape.prototype.move = function (x, y) {
 	this.y += y;
 	return this;
 };
+
+MyCanvasShape.prototype.scale = function (x, y) {
+	if (x == 0 && y == 0) {
+		this.mustBeScaled = false;
+	}
+
+};

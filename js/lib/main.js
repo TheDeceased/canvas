@@ -15,19 +15,20 @@ MyCanvas.prototype.make = function(parent) {
 	this.canvas = canvas;
 	this.ctx = canvas.getContext('2d');
 
-	window.onresize = function(){that.resize(canvas)};
-	this.resize(canvas, parent);
+	this.layers = new MyCanvasLayers();
+	window.onresize = function(){ that.resize(that, canvas, parent) };
+	this.resize(that, canvas, parent);
 	if (!parent) {
 		parent = document.getElementsByTagName('body')[0];
 	}
 	parent.appendChild(canvas);
-	this.layers = new MyCanvasLayers();
 	return this;
 };
 
-MyCanvas.prototype.resize = function(canvas, parent) {
-	canvas.width = window.innerWidth/* - 4*/;
-	canvas.height = window.innerHeight/* - 4*/;
+MyCanvas.prototype.resize = function(that, canvas, parent) {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	that.draw();
 };
 
 MyCanvas.prototype.start = function() {
